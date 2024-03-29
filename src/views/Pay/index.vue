@@ -6,11 +6,9 @@ import {useCountDown} from '@/composables/useCountDown'
 const payInfo = ref({})
 const route = useRoute()
 let orderId = route.query.id
-console.log(orderId)
 const getPayInfo = async ()=>{
     let resp = await getOrderAPI(route.query.id)
     payInfo.value = resp.result
-    console.log(payInfo.value)
 }
 onMounted(()=>getPayInfo())
 
@@ -18,7 +16,7 @@ onMounted(()=>getPayInfo())
 
 // 支付地址
 const baseURL = 'http://pcapi-xiaotuxian-front-devtest.itheima.net/'
-const backURL = 'http://localhost:5173/#/paycallback?payResult=true&orderId='+orderId
+const backURL = 'http://47.108.128.103/#/paycallback?payResult=true&orderId='+orderId
 const redirectUrl = encodeURIComponent(backURL)
 // const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redirectUrl}`
 const payUrl = backURL

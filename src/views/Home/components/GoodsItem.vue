@@ -1,6 +1,6 @@
 <template>
     <div>
-        <router-link class="goods-item" to="/">
+        <router-link class="goods-item" :to="{name:'Detail',params:{id:`${goods.id}`}}">
             <img :src="goods.picture" alt="">
             <p class="name ellipsis">{{ goods.name }}</p>
             <p class="description ellipsis">{{ goods.desc }}</p>

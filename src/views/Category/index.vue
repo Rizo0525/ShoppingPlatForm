@@ -2,8 +2,9 @@
     <div class="container">
         <div class="bread-container">
             <el-breadcrumb separator=">">
-                <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item :to="{ path: '/' }">{{ categoryDataRef.name }}</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
+                {{ categoryDataRef.value }}
+                <el-breadcrumb-item>{{ categoryDataRef.name }}</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="home-banner">

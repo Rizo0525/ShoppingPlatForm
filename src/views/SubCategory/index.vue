@@ -27,7 +27,7 @@ const disabled = ref(false)
     <!-- 面包屑 -->
     <div class="bread-container">
       <el-breadcrumb separator=">">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item :to="{ name:'Category',params:{id:`${breadCategoryRef.parentId}`} }">{{ breadCategoryRef.parentName }}
         </el-breadcrumb-item>
         <el-breadcrumb-item>{{ breadCategoryRef.name }}</el-breadcrumb-item>

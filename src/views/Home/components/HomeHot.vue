@@ -3,7 +3,7 @@
         <HomePanel title="人气推荐" subTitle="新鲜好物 好多商品">
             <ul class="goods-list">
                 <li v-for="item in hotGoodsRef" :key="item.id">
-                    <RouterLink to="/">
+                    <RouterLink :to="{name:'Detail',params:{id:`${item.id}`}}">
                         <img v-img-lazy="item.picture" alt="">
                         <p class="name">{{ item.title }}</p>
                         <p class="desc">{{ item.alt }}</p>

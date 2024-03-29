@@ -8,7 +8,6 @@ const route = useRoute()
 const getOrderInfo = async ()=>{
   let resp = await getOrderAPI(route.query.orderId)
   orderInfo.value = resp.result
-  console.log(orderInfo.value)
 }
 onMounted(()=>getOrderInfo())
 </script>
@@ -25,8 +24,8 @@ onMounted(()=>getOrderInfo())
         <p>支付方式：<span>支付宝</span></p>
         <p>支付金额：<span>¥{{ orderInfo.payMoney?.toFixed(2) }}</span></p>
         <div class="btn">
-          <el-button type="primary" style="margin-right:20px">查看订单</el-button>
-          <el-button>进入首页</el-button>
+          <el-button type="primary" style="margin-right:20px" @click="$router.push('/member/order')">查看订单</el-button>
+          <el-button @click="$router.push('/home')">进入首页</el-button>
         </div>
         <p class="alert">
           <span class="iconfont icon-tip"></span>

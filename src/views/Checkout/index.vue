@@ -39,7 +39,6 @@ const createOrder = async ()=>{
         goods:checkInfo.value.goods.map((item)=> {return{skuId:item.skuId,count:item.count}}),
         addressId:curAddress.value.id
     })
-    console.log(resp.result)
     let orderId = resp.result.id
     router.push({
         path:'/pay',

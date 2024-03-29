@@ -2,8 +2,8 @@
     <div class="home-category">
         <ul class="menu">
             <li v-for="item in allCategoriesRef" :key="item.id">
-                <router-link to="/">{{ item.name }}</router-link>
-                <router-link to="/" v-for="i in item.children.slice(0,2)" :key="i.id">{{ i.name }}</router-link>
+                <router-link :to="{name:'Category',params:{id:`${item.id}`}}">{{ item.name }}</router-link>
+                <router-link :to="{name:'SubCategory',params:{id:`${i.id}`}}" v-for="i in item.children.slice(0,2)" :key="i.id">{{ i.name }}</router-link>
                 <div class="layer">
                     <h4>分类推荐<small>根据您的购买记录或浏览记录推荐</small></h4>
                     <ul>
@@ -32,7 +32,6 @@ import {storeToRefs} from 'pinia'
 import { onMounted } from 'vue'
 let categoryStore = useCategoryStore()
 let {allCategoriesRef} = storeToRefs(categoryStore)
-
 </script>
 
 <style lang="scss" scoped>

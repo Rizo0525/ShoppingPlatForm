@@ -10,7 +10,6 @@ const likeList = ref([])
 const getLikeList = async ()=>{
     const res = await getLikeListAPI({limit:4})
     likeList.value = res.result
-    console.log(likeList.value)
 }
 onMounted(()=>getLikeList())
 </script>

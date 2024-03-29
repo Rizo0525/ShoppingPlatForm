@@ -2,7 +2,7 @@
     <div class="home-product">
         <HomePanel :title="item.name" v-for="item in goodsRef" :key='item.id'>
             <div class="box">
-                <router-link class="cover" to="/">
+                <router-link class="cover" to="/home">
                     <img v-img-lazy="item.picture" alt="">
                     <div class="cover-title">
                         <span>{{item.name}}馆</span>
@@ -33,7 +33,6 @@ import { onMounted, ref } from 'vue'
 let goodsRef = ref([])
 onMounted(async ()=>{
     let resp  = await getGoods()
-    console.log(resp)
     goodsRef.value = resp.result
 })
 
